@@ -1,0 +1,196 @@
+
+NOTE: use the 'sudoedit' to edit files as root. This will preserve the
+keybindings and other settings I have configured in my nvim init file (since I
+have set my $EDITOR env var to use nvim).
+
+
+<l> = <leader>
+
+
+Reminders:
+- Replace selection with clipboard (paste):
+  * make (visual) selection
+  * "0p
+- To paste a column of text, you must yank/delete it as a column of text (i.e.
+  in visual block mode)
+- When using :'<,'>s/..., do not put '%' in front of the 's/'.
+- Use period '.' to repeat
+
+
+REGEX
+
+    :s/\<./\u&/g    Title case words in current line
+    '&'             Represents matched matten
+    \=getreg('')    As replace field, represents clipboard content
+
+
+NORMAL MODE
+
+    :sort u         Sort all lines and remove duplicates
+    gq{             Hard-wrap (reflow) current paragraph
+    gqq             Hard-wrap (reflow) current line
+    :e PATH         Open file in edit mode
+    :tabnew         Open file in new tab
+    ]b              Next tab (buffer)
+    [b              Prior tab (buffer)
+    :so $MYVIMRC    Source (reload) config
+    :rec [FILENAME] Recover buffer from swap file
+    :xa             Save all changes (in all buffers) and exit
+    :set <OPTION>?  Display/show/print/get current value of option
+    :retab          Replace all <TAB> chars with spaces
+    gv              Reselect last/previous visual mode selection
+    :noh            Hide highlighting until next search (pseudo deselect)
+    :sav            Save as
+    :%join          Put all lines on one line separated by spaces
+    :messages       Show messages
+    @@              Perform last macro (remember, can prefix with number to repeat multiple times)
+    :verb map       Show all keybindings
+    :verb map KEYS  Display/show/print/get what KEYS are bound to
+    :verb vmap KEYS Display/show/print/get what KEYS are bound to (for visual mode)
+    ]s              Move to next misspelled word
+    z=              Spelling suggestions
+    zg              Add word under cursor to spellfile
+    zug             Undo word added to spellfile (cursor must be over word)
+    :set spell      Turn on spell check
+    :set nospell    Disable spell check
+    :syntax clear   Disable syntax highlighting for current buffer
+    das             Delete sentence
+    dap             Delete paragraph
+    <l>fr           Recent files (LazyVim)
+    <l>,            Switch buffer (LazyVim)
+    <l>:            Command history (LazyVim)
+    <l>sC           List commands (LazyVim)
+    <l>bp           Pin buffer (LazyVim)
+    <l>bP           Delete all non-pinned buffers (LazyVim)
+    <l>uf           Toggle (enable/disable) autoformat on save (LazyVim)
+    <l>bd           Delete/close current buffer (LazyVim)
+    vib             Select inside parenthasis block
+    vab             Select parenthasis block (include parenthasis)
+    g <C-G>         Word count (and other stats)
+    <C-←/→>         Change file browser pane size
+    :reg            Access/list all currently defined registers
+    <C-a>           Increment number/count under cursor
+    <C-x>           Decrement number/count under cursor
+    :set filetype?  Get filetype
+    Va{y            Yank function definition
+    zd              Unfold fold under cursor
+    <num>gg         Goto line number
+    <l>ul           Toggle line numbers
+    <l>uw           Toggle word wrap
+    <l>ud           Toggle code suggestions/linting
+    :set tw=0       Disable hard-wrap (reflow)
+    *               Search for word under cursor
+    q:kyy           Copy most recently run command to clipboard  # TODO (integrate this) use the code at end to paste spaces to current line length is as long/longer than longest line: s/$/\=repeat(' ', max(map(range(1, line('$')), "col([v:val, '$'])")) - strlen(getline('.')))/
+
+
+NORMAL+INSERT MODE
+
+    C-PgDn          Next tab
+    C-PgUp          Prev tab
+
+
+NORMAL+INSERT+VISUAL MODE
+
+    C-y/e           Scroll up/down
+    C-w s           Split window
+    C-w             Toggle focused window
+    C-w <arrow>     Focus window in direciton <arrow>
+    C-w o           Discard split
+
+
+INSERT MODE
+
+    C-t             Demote (>> indent) bullet
+    C-d             Promote (<< unindent) bullet
+    C-x s           Show spelling suggestions
+
+
+VISUAL MODE
+
+    >               Indent selection
+    <               Dedent selection
+    :norm $x        Delete end character on all selected lines
+    ~               Toggle case
+    y/ C-r"         Search for selected text
+    zf              Fold selection
+    *               Search for selection (I think?)
+    gJ              Join selected lines
+
+
+VISUAL BLOCK MODE
+
+    x               Delete selection
+    I               Insert
+    $A              Append to end of lines
+    o               Move cursor/anchor to other end
+    c               Change (delete selection and insert)
+    r<char>         Overwrite selection with <char>
+
+
+DIFF/MERGE MODE
+
+    nvim -d FILE1 FILE2
+
+    dp              diffput: puts changes under the cursor into the other 
+                    file making them identical (thus removing the diff).
+    do              diffget: (o => obtain). The change under the cursor is
+                    replaced by the content of the other file making them
+                    identical.
+    ]c              Jump to the next diff
+    [c              Jump to the previous diff
+    zR              Unfold all folded sections (by default, nvim folds a
+                    section once a diff is resolved)
+    :diffupdate     Reload diff comparison
+
+
+NEO TREE (plugin)
+
+    R               Reload/refresh file list
+    H               Toggle show/hide hidden files
+
+
+Using substitution (search/replace) tips
+
+    - Use \r instead of \n
+    - s/<FIND>/<REPLACE>/g means act on all matches in the current line
+    - %s/<FIND>/<REPLACE>/g means act on all matches in the current buffer
+
+
+Replace block of text
+
+    - Navigate to the top left character of the block you want to modify.
+    - Press Ctrl+V (enters visual block mode).
+    - Navigate to the bottom right character of the block you want to modify.
+    - Press 'c'.
+    - Type out the replacement text.
+    - Press 'esc' (replacement is then repeated on the other lines).
+
+
+Insert (overwrite) with block of text
+
+    - Yank block of text in visual block mode
+    - Move cursor to column you want pasted from (you can add spaces to end of row if you want to move the paste past the end of other lines)
+    - Press p in normal mode
+
+
+Paste string in front of several rows
+
+    - Copy your string
+    - Start recording macro to register q (press qq in normal mode)
+    - Paste string where you want it in a given line
+    - Stop recording macro (q)
+    - Make visual line selection
+    - :norm @q
+
+
+Lua from the Vim command line
+
+    - If you want to inspect a lua object, you can display it using 
+      `:lua vim.pretty_print(OBJ)` 
+
+
+Nice refs
+
+    https://vim.fandom.com/wiki/Search_and_replace_in_a_visual_selection
+    https://vim.fandom.com/wiki/Search_and_replace
+

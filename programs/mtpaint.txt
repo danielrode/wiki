@@ -1,0 +1,4 @@
+
+KEYBINDINGS
+
+	HOME 		Toggle "viewer mode" (will hide/show palette and menus)

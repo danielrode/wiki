@@ -1,0 +1,35 @@
+
+https://pages.uoregon.edu/torrence/391/labs/LaTeX-cheat-sheet.pdf
+
+# Symbols
+
+	° 	\textdegree
+
+
+# Add or subtract what the next enumerate value will be
+
+	\addtocounter{enumi}{44}
+
+If this is added after a list item that is 3., the next item will be 47.
+
+
+# Start enumerate from specific value in LyX
+
+Start the enumerate environment, then add the following ERT:
+
+	[5.]\setcounter{enumi}{5}
+
+This will start the list at 5.
+
+
+# Insert images
+
+Insert in preamble:
+
+	\usepackage{graphicx}
+
+Insert in body for each desired image:
+
+	\includegraphics[width=0.8\paperwidth]{imgs/1}
+
+Where "imgs/1" refers to ./imgs/1.png or ./imgs/1.jpg, relative to the directory that the .lyx file resides in.

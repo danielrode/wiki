@@ -1,0 +1,56 @@
+
+␣ 	= Space (' ') character
+C- 	= Ctrl
+A- 	= Alt
+↵ 	= Enter
+Δ	= Delete
+
+
+NORMAL MODE
+
+	F3          Insert date
+	␣? 			Search for command
+	]␣			Insert newline below
+	␣k 			Show documentation
+	C-u 		Scroll up
+	C-d 		Scroll down
+	␣b 			Buffer (tab) picker (menu)
+	:yank-join  Make multi yank into one
+	mamx        Select block/surrounding pair
+	C-a         Increment count/number
+	C-x         Deincrement count/number
+	:reflow     Hard re-wrap text so lines are not too long
+	;           Collapse selection(s) to sinlge cursor(s)
+	,           Keep only primary selection
+	␣fA-↵       Open selected file and keep picker open
+	␣fC-v       Open selected file in new vertical split and keep picker open
+	␣fC-s       Open selected file in new horizontal split and keep picker open
+    Q           Start/stop macro recording to selected register (experimental)
+    q           Play back recorded macro from selected register (experimental)
+
+
+SELECT MODE
+
+	A-d 		Delete without yanking
+	_ 			Deselect whitespace
+	A-; 		Flip/reverse/swap selection cursor/anchor
+	C 			Add selection below
+	A-C         Add selection above
+	J 			Join lines
+	A-J 		Join lines and select between
+	A-K         Remove selections matching regex (invert selection alternative)
+	A-5↵ 		Find all (search for) current selection
+	"my 		Yank to register m
+	A-minus     Join/collapse/merge selections into one
+	|           Pipe each selection to shell command, replacing with output
+    !           Run shell command, insert output before each selection
+    $           Pipe each sel to shell command, deselect where exit code not 0 
+	)           Make next selection the primary one
+	Alt-)       Cycle all selection contents to next selection
+
+
+SETTINGS/CONFIG
+
+	:set whitespace.render all    Show whitespace (tabs vs spaces, etc...)
+	:set whitespace.render none   Hide whitespace rendering
+	:lang LANGUAGE                Set which syntax highlighting to use

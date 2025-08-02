@@ -1,0 +1,6 @@
+
+KEYBINDINGS
+
+	Ctrl+R 		Goto heading (Markdown)
+	Alt+F3 		Select all instances of variable
+	Alt+Q 		Auto-wrap lines/comments at rulers

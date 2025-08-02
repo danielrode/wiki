@@ -1,0 +1,8 @@
+
+KEYBINDINGS
+
+  ^N        Toggle type-to-nav mode
+  tt        Sort by time
+  tc        Reset sort order (I think)
+  ^R-<CR>   Duplicate file
+  ''        Jump to first file

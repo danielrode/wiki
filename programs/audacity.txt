@@ -1,0 +1,4 @@
+
+GUIDE
+
+	- To resume playback after 'pause', press P. (Pressing 'space' will start playback over from the beginning.)

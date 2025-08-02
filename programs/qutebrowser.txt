@@ -1,0 +1,45 @@
+
+REMINDERS
+
+	:open [-t] <STR>
+		When STR is not a proper URL, the browser will open DuckDuckGo with STR as the search query.
+
+
+KEYBINDINGS
+
+	Shift+ESC	Exit passthrough mode
+	tSH 		Enable JavaScript for the current domain along with its sub-domains
+	tsu			Temporarily enable JavaScript for the current URL
+	gl			Move current tab left
+	gr 			Move current tab right
+	Ctrl+V		Passthrough mode
+	Shift+ESC	Exit passthrough mode
+	o 			Shortcut for ':open'
+	O 			Shortcut for ':open -t'
+	xo			Open in background tab
+	M 			Bookmark current page
+	;y 			Hint links, copy selection to clipboard
+				(note: shortcut for ':hint links yank')
+	;i 			Hint images, follow selection
+	f 			Hint all, follow selection in current tab
+	;f 			Hint all, follow selection in new foreground tab
+	F 			Hint all, follow selection in new background tab
+
+
+(KEY+MOUSE)BINDINGS
+
+	Ctrl+Left_click 		Open link in new foreground tab
+	Shift+Left_click 		Open link in new window
+	Ctrl+Shift+Left_click 	Open link in new background tab
+	Middle_click			Open link in new foreground tab
+
+
+COMMANDS
+
+	:yank							Copy current tab URL
+	:open -t <URL>					Open URL in a new tab
+	:session-save -o <NAME>			Save current window to disk
+	:config-source 					Reload config.py
+	:config-edit 					Open config.py in an external text exitor and then reload config.py
+	:print -f <PATH> 				Save the current page as a PDF
+	:bookmark-add <URL> <NAME> 	Add bookmark manually

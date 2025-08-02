@@ -1,0 +1,11 @@
+
+KEYBINDINGS
+
+	a	Fit view to whole page
+	s	Fit view to page width
+	=	Fit view to original document size
+	nG	Goto the nth page
+  	mX	Set a quickmark to a letter or number X
+	'X	Goto quickmark saved at letter or number X
+	^n 	Toggle statusbar
+	f 	Follow links

@@ -1,0 +1,30 @@
+
+GUIDE
+
+	Often, when commands are run, they are shown briefly in the status bar at the bottom of the window. This is useful if you want to know what the command for a certain action is so you can set a keybinding for it. You can always open the messages pane (under the View menu) to see a history of run commands as well.
+
+	Redock (attach) Outliner Pane
+	- Shut down lyx
+	- Delete "[views]" section from ~/.config/LyX/lyx.conf file
+
+	Tables
+	- Set width of multiple columns by selecting them, right-click, "Settings..."
+
+	If you want a bullet list without the bullet symbol (for example, to use for a series of calculations), simply use the list environment (rather than the itemized one).
+
+	Scale table:
+		- insert ERT: \resizebox{\columnwidth}{!}{%
+		- insert table content
+		- insert ERT (after table content): }
+		- source: https://tex.stackexchange.com/questions/10863
+			- Usage:
+				- \resizebox{<width>}{<height>}
+				- You can select ! for the height to make it scale along with the width (the width being '\columnwidth') in the example above.
+
+
+KEYBINDINGS
+
+	ALT-x	open the mini-buffer (a prompt for commands)
+	ALT+o 	show/hide outline pane
+	Ctrl+, 	open/close inset (notes)
+	ALT+P S layout: standard

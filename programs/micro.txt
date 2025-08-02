@@ -1,0 +1,41 @@
+
+KEYBINDINGS
+
+	Ctrl+E 		Open micro's command prompt
+
+
+COMMANDS
+
+	NOTE: '[]' indicates that an argument is optional.
+
+	bind <KEY> <ACTION>			Create keybinding (will modify bindings.json)
+	help [TOPIC]				Open corresponding help topic
+	replace <SEARCH> <VALUE> 	Search and replace
+								Option flags:
+								 -a  replace all occurances
+								 -l  do a literal search (instead of using
+								     regex)
+	set <OPTION> <VALUE> 		Configure option (will modify settings.json)
+	setlocal <OPTION> <VALUE> 	Configure option for current buffer only (will
+								not modify settings.json)
+	show <OPTION> 				Show current value for given option
+	vsplit [FILENAME] 			Open vertical split
+	hsplit [FILENAME] 			Open horizontal split
+	tab [FILENAME] 				Open a new tab
+	tabmove [-+]n 				Moves the active tab to another slot. n is an
+								integer. If n is prefixed with - or +, then it
+								represents a relative position. If n has no
+								prefix, it represents an absolute position.
+	tabswitch <TAB> 			Switch to the specified tab. TAB can be a
+								number or name of a tab
+	textfilter <SH_COMMAND>		Filter the current selection through a shell
+								command as standard input and replace the
+								selection with the stdout of the shell
+								command.
+	reload 						Reload all runtime files
+	retab 						Replace all leading tabs with spaces or
+								leading spaces with tabs (depending on the
+								value of tabstospaces)
+	showkey 					Show the action(s) bound to a given key
+	lint 						Lint the current file for errors
+	set readonly true 			Set buffer to read-only mode

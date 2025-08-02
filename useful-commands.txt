@@ -1,0 +1,3 @@
+- od  # Dumps files in octal and other formats
+- pydoc3  # Python 3 offline documentation
+- blueberry  # GUI for manageing Bluetooth
