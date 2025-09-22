@@ -35,3 +35,4 @@ see https://wiki.tnonline.net/w/Btrfs/Balance
 # Diff two snapshots
 
 	sudo btrfs send --no-data -p path/to/@snapshotA path/to/@snapshotB | btrfs receive --dump | grep '^update_extent'
+	# Warning: I don't think this shows deletions.
