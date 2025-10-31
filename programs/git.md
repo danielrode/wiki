@@ -6,7 +6,28 @@
 
 	git rebase -i COMMIT~1
 
-	Then follow directions git gives.
+Then follow directions git gives.
+
+If you have already modified the working directory, commit changes, then run
+the rebase command above and squash your new commit onto the COMMIT you want
+to modify. To squash your new commit onto COMMIT, simply find the line with
+your new commit ID, change 'pick' to 'squash', cut that line and paste it
+directly underneath the COMMIT you want to modify. Then save and close the
+editor.
+
+Example:
+
+	pick 133a3e6 # Add feature A
+	pick d3e5486 # Add feature B
+	pick d3e5486 # Change something else
+	pick 5890e52 # Opps, fix typo in feature A before push
+
+-->
+
+	pick 133a3e6 # Add feature A
+	squash 5890e52 # Opps, fix typo in feature A before push
+	pick d3e5486 # Add feature B
+	pick d3e5486 # Change something else
 
 # Exclude some paths from commit
 
@@ -30,10 +51,6 @@
 # Show history of (view all changes for) a single file
 
 	git log -p -- path/to/file
-
-# See what has changed in a file since a specific commit
-
-	git diff COMMIT_ID PATH
 
 # See what has changed since the commit before the latest
 
