@@ -141,3 +141,7 @@ TODO
 # Search all git commits (file content) history
 
 	git rev-list --all | xargs git grep QUERY
+
+# Show commit message and commit date for a list of commit IDs/hashs
+
+	NEWLINE_SEP_COMMITS | xargs -d \n git show --no-patch --oneline --pretty=format:'%C(blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an [%GK %G?]%C(reset)%C(bold yellow)%d%C(reset)'
