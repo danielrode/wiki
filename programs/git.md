@@ -138,6 +138,6 @@ TODO
 
 	git add -p FILE
 
-# Search all of git commits contents for a string
+# Search all git commits (file content) history
 
 	git rev-list --all | xargs git grep QUERY
