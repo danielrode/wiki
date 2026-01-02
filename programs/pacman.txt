@@ -1,0 +1,22 @@
+
+# Search for package that provides file X
+
+	- Update the database
+
+		sudo pacman -Fy
+
+	- Search for package
+
+		pacman -F FILENAME
+
+# Downgrade package (from cache)
+
+	sudo pacman -U /var/cache/pacman/pkg/old_package_version_path.ext
+
+		This process will remove the current package and install the older version. Dependency changes will be handled, but pacman will not handle version conflicts. If a library or other package needs to be downgraded with the packages, please be aware that you will have to downgrade this package yourself as well.
+
+
+
+# Sources
+- https://unix.stackexchange.com/questions/14858/
+- https://wiki.archlinux.org/index.php/downgrading_packages

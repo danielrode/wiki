@@ -1,0 +1,44 @@
+
+KEYBINDINGS
+
+	Meta:
+		C-		means (press and hold) the Control key
+		M-		means the Meta key (the Alt key, on most keyboards)
+		S-		means the Shift key (e.g. ‘S-TAB’ means Shift Tab)
+		DEL		means the Backspace key (not the Delete key)
+		RET		means the Return or Enter key
+		SPC		means the Space bar
+		ESC		means the Escape key
+		TAB		means the Tab key
+
+	C-h b 			List all the bindings available in a buffer.
+
+
+# Org-Mode
+
+	KEYBINDINGS
+
+		C-k 				Kill (delete) current item and its subtree
+		C-x u 				Undo | Note: I enabled C-z as undo
+		TAB 				Fold/unfold tree
+		M-RET 				Insert new list item
+		S-LEFT/RIGHT 		Cycle item todo state | Can also use S-RIGHT
+		M-LEFT/RIGHT 		Increase/decrease indentation
+		M-S-LEFT/RIGHT 		Increase/decrease item and it's childrens' indentation
+		M-UP/DOWN 			Move item up/down
+		M-S-UP/DOWN 		Move item and it's children up/down
+		C-c / m 			Search for tag
+		S-TAB 				Go to overview (everything collapsed)
+		C-S-DEL 			Delete current line
+		C-c ^ 				Sort children
+		C-a C-SPC C-e M-w 	Copy current line (without newline char)
+		C-SPC C-e M-w 		Copy from cursor to end of line
+		C-s 				Jump to next search match
+		F10 				Toggle visual-line-mode (word wrap)
+
+
+	REFERENCE
+
+		There is a lot here, but as you get the hang of more of these shortcuts, keep referencing this to learn more:
+		- https://orgmode.org/orgcard.pdf
+		- https://orgmode.org/orgguide.pdf

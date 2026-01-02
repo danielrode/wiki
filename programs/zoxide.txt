@@ -1,0 +1,11 @@
+
+NOTE: By default, the abbreviation to use is 'z' but I switched this in my Fish config file so that the abbreviation is 'j' instead.
+
+COMMANDS
+
+	j foo       cd to highest ranked directory matching foo
+	j foo bar   cd to highest ranked directory matching foo and bar
+	ji foo      # cd with interactive selection using fzf
+	jq foo      # echo the best match, don't cd
+	za /foo     # add directory /foo to the database
+	zr /foo     # remove directory /foo from the database

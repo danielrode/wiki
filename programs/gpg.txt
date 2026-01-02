@@ -1,0 +1,33 @@
+
+GUIDE
+
+	List local keys
+
+		gpg --fingerprint --with-subkey-fingerprints
+
+	Temporarily change directory used by GPG
+
+		gpg --homedir PATH
+
+	Export keypair
+
+		gpg --armor --export username@email > public.gpg
+
+		gpg --armor --export-secret-key username@email > private.gpg
+
+	Import key
+
+		gpg --import KEY_FILE_PATH
+
+	Add subkey
+
+		gpg --edit-key john@doe.email
+		addkey
+		...
+		save
+
+	Encrypt file symmetrically (with password)
+
+		gpg --symmetric PATH
+
+		You will then be asked to enter the password.

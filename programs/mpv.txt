@@ -1,0 +1,10 @@
+
+KEYBINDINGS
+
+	v 				Toggle subtitle visibility.
+	Alt++ 			Zoom in.
+	Alt+- 			Zoom out.
+    Alt+ARROWKEY    Pan some direction.
+	Alt+Backspace	Reset zoom/pan.
+	.               Step forward 1 frame.
+	,               Step backward 1 frame.

@@ -1,0 +1,5 @@
+
+# Editing former commands
+
+cmd1 arg1 arg2 arg3
+cmd2 !*  # !* becomes arg1 arg2 arg3

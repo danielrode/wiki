@@ -1,0 +1,16 @@
+In your citation, the elements should be listed in the following order:
+
+	Author.
+	Title of source.
+	Title of container,
+	Other contributors,
+	Version,
+	Number,
+	Publisher,
+	Publication date,
+	Location.
+
+
+
+
+source: https://owl.purdue.edu/owl/research_and_citation/mla_style/mla_formatting_and_style_guide/mla_formatting_and_style_guide.html

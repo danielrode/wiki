@@ -1,0 +1,4 @@
+- good lighting 
+- sturdy tripod with phone mount 
+- dark surface to provide contrast 
+- laptop with software to remote control android phone (so it need not be touched) (ADB?)

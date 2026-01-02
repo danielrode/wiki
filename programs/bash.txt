@@ -1,0 +1,5 @@
+
+KEYBINDINGS
+
+	C-w      Delete from cursor to start of word
+	A-d      Delete from cursor to end of word

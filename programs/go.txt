@@ -1,0 +1,5 @@
+
+# Format time object as string (strftime)
+
+See documentation (run):
+go doc time.layout

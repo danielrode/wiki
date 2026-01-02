@@ -1,0 +1,6 @@
+
+# Block All Images
+
+Add the following under "My Filters":
+
+	*$image

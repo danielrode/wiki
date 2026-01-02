@@ -1,0 +1,4 @@
+
+COMMANDS
+
+	:upscaling next		Cycle active upscaling method.

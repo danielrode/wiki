@@ -1,0 +1,19 @@
+
+# Search for package that provides file
+
+	Make sure 'xtools' is installed.
+
+	xlocate -S  # run periodically
+	xlocate PATH
+
+# View xbps activity log
+
+	See `void.txt`
+
+# List files provided by package
+
+	vpm fl PACKAGE
+
+# Cleanup package cache
+
+	vpm cl
