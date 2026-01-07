@@ -54,3 +54,8 @@ SETTINGS/CONFIG
 	:set whitespace.render all    Show whitespace (tabs vs spaces, etc...)
 	:set whitespace.render none   Hide whitespace rendering
 	:lang LANGUAGE                Set which syntax highlighting to use
+
+
+# Change 4-space indentation to 2-space
+
+	%s␣␣␣␣↵↵iΔΔΔ
