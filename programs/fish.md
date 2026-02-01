@@ -5,3 +5,9 @@
         cmd3
         cmd4 $l
     end
+
+# Math
+
+    math EXPRESSION
+
+Use 'x' instead of '*'.

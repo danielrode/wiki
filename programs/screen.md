@@ -6,8 +6,6 @@
 
     screen -ls
 
-# Force attach to existing session (even if it is already attached elsewhere)
+# Attach to existing session
 
-This will detach other location, but session will be unharmed.
-
-    screen -dr SESH_NAME
+    screen -x SESH_NAME
