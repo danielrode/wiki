@@ -27,12 +27,9 @@ like `lsblk` know what is going on with the drive.
 
 # Balancing
 
-TODO
+"Using -dusage=5 we limit balance to compact data blocks that are less than 5% full. This is a good start, and we can increase it to 10-15% or more if needed. A small (less than 100GiB) filesystem may need a higher number. The goal here is to make sure there is enough Unallocated space on each device in the filesystem to avoid the ENOSPC situation." ([tnonline](https://wiki.tnonline.net/w/Btrfs/Balance))
 
-see info about -dsoft -msoft in
-https://unix.stackexchange.com/questions/196490/what-can-i-do-with-btrfs-profiles
-
-see https://wiki.tnonline.net/w/Btrfs/Balance
+	sudo btrfs balance start -dusage=5 /MNT/POINT
 
 # Diff two snapshots
 
