@@ -11,3 +11,7 @@
     math EXPRESSION
 
 Use 'x' instead of '*'.
+
+# Pipe stderr and stdout
+
+    cmdA 2>&1 | cmdB

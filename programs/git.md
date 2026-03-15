@@ -2,6 +2,10 @@
 
 	git reset HEAD^
 
+Then, if you want to clear (reset) the staging area as well, run:
+
+	git reset --hard HEAD
+
 # Modify/amend/edit commit that is not most recent
 
 	git rebase -i COMMIT~1
