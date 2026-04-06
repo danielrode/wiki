@@ -60,9 +60,9 @@ Example:
 
 	git diff HEAD^
 
-# Include staged file(s) in diff
+# Diff both staged and unstaged changes, and view with delta, ignoring whitespace
 
-	git diff --cached
+	git diff HEAD -w | delta
 
 # Backup repo
 
