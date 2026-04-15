@@ -27,6 +27,10 @@ NORMAL MODE
 	␣fC-s       Open selected file in new horizontal split and keep picker open
     Q           Start/stop macro recording to selected register (experimental)
     q           Play back recorded macro from selected register (experimental)
+	C-i         Jump forward in jump list
+	<TAB>       Jump forward in jump list
+	C-o         Jump backward in jump list
+	␣j          Show jump list
 
 
 SELECT MODE
@@ -46,7 +50,15 @@ SELECT MODE
     !           Run shell command, insert output before each selection
     $           Pipe each sel to shell command, deselect where exit code not 0 
 	)           Make next selection the primary one
-	Alt-)       Cycle all selection contents to next selection
+	A-)         Cycle all selection contents forwards
+	A-.         Repeat last f/t selection
+	S           Split selection using pattern
+
+
+FILE PICKER
+
+	C-v        Open selected file in a new vertical split
+	C-s        Open selected file in a horizontal split
 
 
 SETTINGS/CONFIG

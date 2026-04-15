@@ -5,3 +5,13 @@
         cmd3
         cmd4 $l
     end
+
+# Math
+
+    math EXPRESSION
+
+Use 'x' instead of '*'.
+
+# Pipe stderr and stdout
+
+    cmdA 2>&1 | cmdB

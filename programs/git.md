@@ -2,6 +2,10 @@
 
 	git reset HEAD^
 
+Then, if you want to clear (reset) the staging area as well, run:
+
+	git reset --hard HEAD
+
 # Modify/amend/edit commit that is not most recent
 
 	git rebase -i COMMIT~1
@@ -56,9 +60,9 @@ Example:
 
 	git diff HEAD^
 
-# Include staged file(s) in diff
+# Diff both staged and unstaged changes, and view with delta, ignoring whitespace
 
-	git diff --cached
+	git diff HEAD -w | delta
 
 # Backup repo
 
@@ -143,3 +147,42 @@ branchB, then merge branchB into branchA.
 # Dump/show contents of a file at from a specific commit
 
 	git show COMMIT:FILE
+
+# Maintain local patches while still contributing and receving from upstream
+
+This is useful when you need to keep up to day with upstream (and keep that
+code checked out) while also maintaining a set of local patches that you also
+always need checked out. I will use my ~/code repo, master (the shared branch),
+and patches (master plus local-patches branch) in my examples below.
+
+To pull changes from upstraem to machine with local patches branch, run:
+
+	cd ~/code
+	git checkout patches
+	git fetch origin master:master
+	git rebase master
+
+To update local master branch with non-patch changes made to patches branch
+(since the patches branch is always checked out on the machine that has it,
+changes are usually made there that need to be upstreamed), run (in fish):
+NOTE: This assumes the patches branch has only had *one* non-patch commit since
+the patches one (its log should look like COMMIT_IN_COMMON_WITH_MASTER_BRANCH >
+PATCHES_COMMIT > CHANGES_TO_UPSTREAM_COMMIT).
+NOTE: This also assumes you only have one commit (in the whole repo) with the
+name "local patches".
+
+	cd ~/code
+	git checkout patches
+	set td (mktemp -d)
+	git worktree add "$td" master
+	git -C "$td" cherry-pick "$(git rev-parse HEAD)"
+	git worktree remove "$td"  # Removes tmp dir and git links to it
+	set td2 (mktemp -d)
+	git branch patches-tmp master
+	git worktree add "$td2" patches-tmp
+	set gcid (git log --all --grep='^local patches$' --format=%H | head -1)
+	git -C "$td2" cherry-pick "$gcid"
+	git worktree remove "$td2"
+	git switch patches-tmp
+	git branch -D patches
+	git branch -m patches-tmp patches

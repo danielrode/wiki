@@ -4,28 +4,21 @@ http://smarden.org/runit/runscripts.html
 
 # Setting up a new service
 
-	sudo su
-	mkdir /etc/sv/SERVICE_NAME
-    cd /etc/sv/SERVICE_NAME
+    sudo cp -a ~/code/tem/void-runit-sv-service/ /etc/sv/SERVICE_NAME
+		sudo chown -R root:root /etc/sv/SERVICE_NAME
+    sudo chmod 755 /etc/sv/SERVICE_NAME
+    sudo chmod 755 /etc/sv/SERVICE_NAME/run
+    sudo chmod 755 /etc/sv/SERVICE_NAME/log
+    sudo chmod 755 /etc/sv/SERVICE_NAME/log/run
 
-	printf "#!/bin/sh
-	exec 2>&1
-	exec SERVICE_EXE_FULL_PATH
-	" > run
+Fill out that template, then enable service:
 
-	chmod +x run
-	mkdir log
-
-	printf "#!/bin/sh
-	exec vlogger -t SERVICE_NAME -p daemon
-	" > log/run
-
-	ln -s /etc/sv/SERVICE_NAME /var/service/
+    ln -s /etc/sv/SERVICE_NAME /var/service/
 
 # Start and enable a service
 
-	sudo vsv enable SERVICE
-	sudo vsv start SERVICE
+    sudo vsv enable SERVICE
+    sudo vsv start SERVICE
 
 # Add restart delay
 

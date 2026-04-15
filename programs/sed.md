@@ -1,11 +1,11 @@
 
 # Delete first line
 
-    cat FILE | sed 1d
+    sed 1d
 
 # Delete last line
 
-    cat FILE | sed '$d'
+    sed '$d'
 
 # Print Nth line
 
@@ -23,3 +23,7 @@
 
     # Replace 3rd line with text "hello"
     sed -i 3c\\hello
+
+# Delete whitespace and empty lines
+
+    sed -e 's/\s//g' -e '/^$/d'
