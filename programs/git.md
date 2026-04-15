@@ -139,3 +139,7 @@ branchB, then merge branchB into branchA.
 # Show commit message and commit date for a list of commit IDs/hashs
 
 	NEWLINE_SEP_COMMITS | xargs -d \n git show --no-patch --oneline --pretty=format:'%C(blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an [%GK %G?]%C(reset)%C(bold yellow)%d%C(reset)'
+
+# Dump/show contents of a file at from a specific commit
+
+	git show COMMIT:FILE
