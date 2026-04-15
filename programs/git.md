@@ -155,11 +155,18 @@ code checked out) while also maintaining a set of local patches that you also
 always need checked out. I will use my ~/code repo, master (the shared branch),
 and patches (master plus local-patches branch) in my examples below.
 
-To pull changes from upstraem to machine with local patches branch, run:
+To pull changes from upstream to machine with local patches branch, run:
 
+	set patch_branch_name patches
 	cd ~/code
-	git checkout patches
-	git fetch origin master:master
+	git checkout "$patch_branch_name"
+	set td (mktemp -d)
+	git worktree add "$td" master
+	cd "$td"
+	git fetch origin master
+	git merge origin/master -m merge
+	cd ~/code
+	git worktree remove "$td"  # Removes tmp dir and git links to it
 	git rebase master
 
 To update local master branch with non-patch changes made to patches branch
@@ -171,18 +178,19 @@ PATCHES_COMMIT > CHANGES_TO_UPSTREAM_COMMIT).
 NOTE: This also assumes you only have one commit (in the whole repo) with the
 name "local patches".
 
+	set patch_branch_name patches
 	cd ~/code
-	git checkout patches
+	git checkout "$patch_branch_name"
 	set td (mktemp -d)
 	git worktree add "$td" master
 	git -C "$td" cherry-pick "$(git rev-parse HEAD)"
 	git worktree remove "$td"  # Removes tmp dir and git links to it
 	set td2 (mktemp -d)
-	git branch patches-tmp master
-	git worktree add "$td2" patches-tmp
-	set gcid (git log --all --grep='^local patches$' --format=%H | head -1)
+	git branch "$patch_branch_name"-tmp master
+	git worktree add "$td2" "$patch_branch_name"-tmp
+	set gcid (git log --all --grep='^local '"$patch_branch_name"'$' --format=%H | head -1)
 	git -C "$td2" cherry-pick "$gcid"
 	git worktree remove "$td2"
-	git switch patches-tmp
-	git branch -D patches
-	git branch -m patches-tmp patches
+	git switch "$patch_branch_name"-tmp
+	git branch -D "$patch_branch_name"
+	git branch -m "$patch_branch_name"-tmp "$patch_branch_name"
