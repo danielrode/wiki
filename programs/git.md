@@ -140,6 +140,10 @@ branchB, then merge branchB into branchA.
 
 	git rev-list --all | xargs git grep QUERY
 
+# Search all diffs for changes that add/remove the given query (regex)
+
+	git log -p --all -G REGEX
+
 # Show commit message and commit date for a list of commit IDs/hashs
 
 	NEWLINE_SEP_COMMITS | xargs -d \n git show --no-patch --oneline --pretty=format:'%C(blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an [%GK %G?]%C(reset)%C(bold yellow)%d%C(reset)'

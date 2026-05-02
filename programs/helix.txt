@@ -31,6 +31,9 @@ NORMAL MODE
 	<TAB>       Jump forward in jump list
 	C-o         Jump backward in jump list
 	␣j          Show jump list
+	ma{         Select from nearest parent '{' to its pairing '}'
+	ma(         Select from nearest parent '(' to its pairing ')'
+	ma"         Select from nearest parent '"' to its pairing '"'
 
 
 SELECT MODE
