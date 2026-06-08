@@ -15,6 +15,15 @@ TODO
 Can add whole drive instead, but using partitions is recommended so other tools
 like `lsblk` know what is going on with the drive.
 
+# Rename sub-volume label
+
+	sudo btrfs filesystem label /dev/sdXN NEW_LABEL
+	sudo parted /dev/sdX name N NEW_LABEL
+
+https://archive.kernel.org/oldwiki/btrfs.wiki.kernel.org/index.php/UseCases.html
+
+https://wiki.archlinux.org/title/Persistent_block_device_naming
+
 # Convert volume to RAID1 that stores 3 copies
 
 	sudo btrfs balance start -dconvert=raid1c3 -mconvert=raid1c3 /mnt/point
