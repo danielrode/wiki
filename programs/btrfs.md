@@ -15,7 +15,7 @@ TODO
 Can add whole drive instead, but using partitions is recommended so other tools
 like `lsblk` know what is going on with the drive.
 
-# Rename sub-volume label
+# Rename sub-volume (partition) label
 
 	sudo btrfs filesystem label /dev/sdXN NEW_LABEL
 	sudo parted /dev/sdX name N NEW_LABEL
