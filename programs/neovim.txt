@@ -5,6 +5,12 @@ have set my $EDITOR env var to use nvim).
 
 
 <l> = <leader>
+␣ 	= Space (' ') character
+C- 	= Ctrl
+A- 	= Alt
+↵ 	= Enter
+Δ	= Delete
+⇱   = Left click (mouse)
 
 
 Reminders:
@@ -81,6 +87,16 @@ NORMAL MODE
     :set tw=0       Disable hard-wrap (reflow)
     *               Search for word under cursor
     q:kyy           Copy most recently run command to clipboard  # TODO (integrate this) use the code at end to paste spaces to current line length is as long/longer than longest line: s/$/\=repeat(' ', max(map(range(1, line('$')), "col([v:val, '$'])")) - strlen(getline('.')))/
+
+    C-⇱             Add multi-cursor
+    [C              Focus previous multi-cursor
+    ]C              Next multi-cursor
+    g <C-a>         Insert ascending numbers at each multi-cursor
+    Q               Spawn new multi-cursor
+    q=              Follow mode (move all multi-cursors)
+    C-l             Clear multi-cursors
+    gQ              Restore multi-cursors
+    */abc↵1Q        Select all "abc"s with multi-cursors
 
 
 NORMAL+INSERT MODE
