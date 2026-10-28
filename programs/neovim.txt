@@ -5,16 +5,16 @@ have set my $EDITOR env var to use nvim).
 
 
 <l> = <leader>
+␣ 	= Space (' ') character
+C- 	= Ctrl
+A- 	= Alt
+↵ 	= Enter
+Δ	= Delete
+⇱       = Left click (mouse)
 
 
 Reminders:
-- Replace selection with clipboard (paste):
-  * make (visual) selection
-  * "0p
-- To paste a column of text, you must yank/delete it as a column of text (i.e.
-  in visual block mode)
-- When using :'<,'>s/..., do not put '%' in front of the 's/'.
-- Use period '.' to repeat
+- When using :'<,'>s/..., do not put '%' in front of the 's/'. 
 
 
 REGEX
@@ -26,13 +26,10 @@ REGEX
 
 NORMAL MODE
 
-    :sort u         Sort all lines and remove duplicates
-    gq{             Hard-wrap (reflow) current paragraph
+    gq{ (or gwip?)  Hard-wrap (reflow) current paragraph
     gqq             Hard-wrap (reflow) current line
     :e PATH         Open file in edit mode
     :tabnew         Open file in new tab
-    ]b              Next tab (buffer)
-    [b              Prior tab (buffer)
     :so $MYVIMRC    Source (reload) config
     :rec [FILENAME] Recover buffer from swap file
     :xa             Save all changes (in all buffers) and exit
@@ -43,7 +40,7 @@ NORMAL MODE
     :sav            Save as
     :%join          Put all lines on one line separated by spaces
     :messages       Show messages
-    @@              Perform last macro (remember, can prefix with number to repeat multiple times)
+    @@              Perform last macro (can prefix with num to repeat)
     :verb map       Show all keybindings
     :verb map KEYS  Display/show/print/get what KEYS are bound to
     :verb vmap KEYS Display/show/print/get what KEYS are bound to (for visual mode)
@@ -60,10 +57,7 @@ NORMAL MODE
     <l>,            Switch buffer (LazyVim)
     <l>:            Command history (LazyVim)
     <l>sC           List commands (LazyVim)
-    <l>bp           Pin buffer (LazyVim)
-    <l>bP           Delete all non-pinned buffers (LazyVim)
     <l>uf           Toggle (enable/disable) autoformat on save (LazyVim)
-    <l>bd           Delete/close current buffer (LazyVim)
     vib             Select inside parenthasis block
     vab             Select parenthasis block (include parenthasis)
     g <C-G>         Word count (and other stats)
@@ -80,7 +74,38 @@ NORMAL MODE
     <l>ud           Toggle code suggestions/linting
     :set tw=0       Disable hard-wrap (reflow)
     *               Search for word under cursor
-    q:kyy           Copy most recently run command to clipboard  # TODO (integrate this) use the code at end to paste spaces to current line length is as long/longer than longest line: s/$/\=repeat(' ', max(map(range(1, line('$')), "col([v:val, '$'])")) - strlen(getline('.')))/
+    gcc             Toggle comment for current line
+    2cw             Delete next two words and enter insert mode
+    V               Visual-line mode
+    %               Move cursor to matching character
+    H               Move to top of screen
+    M               Move to middle of screen
+    L               Move to bottom of screen
+    w               Jump forwards to the start of a word
+    W               Jump forwards to the start of a WORD
+    e               Jump forwards to the end of a word
+    E               Jump forwards to the end of a WORD
+    b               Jump backwards to the start of a word
+    B               Jump backwards to the start of a WORD
+    vip             Select paragaph
+    viw             Select word
+    C               Delete to end of line and enter insert mode
+    dG              Delete from current line to end of file
+    d <C+End>       Delete from cursor to end of file
+    ciw <C-r> 0     Replace word with yanked text
+
+    C-⇱             Add multi-cursor
+    [C              Focus previous multi-cursor
+    ]C              Next multi-cursor
+    g <C-a>         Insert ascending numbers at each multi-cursor
+    Q               Spawn new multi-cursor
+    q=              Follow mode (move all multi-cursors together)
+    C-l             Clear multi-cursors
+    gQ              Restore multi-cursors
+    /abc↵zqn        Select all "abc"s with multi-cursors
+       ^TODO does current cursor mess this up?
+    gg=G            Reindent everything
+    *zqn            Cursor selecting each instance of word under cursor
 
 
 NORMAL+INSERT MODE
@@ -98,23 +123,21 @@ NORMAL+INSERT+VISUAL MODE
     C-w o           Discard split
 
 
-INSERT MODE
-
-    C-t             Demote (>> indent) bullet
-    C-d             Promote (<< unindent) bullet
-    C-x s           Show spelling suggestions
-
-
 VISUAL MODE
 
     >               Indent selection
     <               Dedent selection
-    :norm $x        Delete end character on all selected lines
     ~               Toggle case
+    u               Lower case
+    U               Upper case
     y/ C-r"         Search for selected text
     zf              Fold selection
-    *               Search for selection (I think?)
     gJ              Join selected lines
+    gcc             Toggle comment for selection
+    :s/foo/bar/g    Replace "foo" with "bar" within selection
+    c"<C-r>"        Surround selection with quote chars
+
+    Q               Break selection into multicursors (one per line)
 
 
 VISUAL BLOCK MODE
@@ -193,4 +216,24 @@ Nice refs
 
     https://vim.fandom.com/wiki/Search_and_replace_in_a_visual_selection
     https://vim.fandom.com/wiki/Search_and_replace
+    https://vim.rtorr.com/
 
+
+
+
+
+un multicursor with single key press?
+space ff
+    note it and make it open doc in new tab
+fix markdown comments toggle for rmd files {and markdown?}
+align selections with & key
+what C-o do?
+
+showkey -a
+
+nvim term title
+
+keybind to empty/clear search
+
+\r to insert newline
+https://neovim.io/doc/user/pattern/#pattern-overview
