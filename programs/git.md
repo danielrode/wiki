@@ -198,3 +198,12 @@ name "local patches".
 	git switch "$patch_branch_name"-tmp
 	git branch -D "$patch_branch_name"
 	git branch -m "$patch_branch_name"-tmp "$patch_branch_name"
+
+# Git clone latest commit contents only, plus repo commit history
+
+	git clone --filter=tree:0 URL
+
+# Git clone latest commit only
+
+	git clone --depth=1 URL
+
