@@ -13,10 +13,20 @@ A- 	= Alt
 ⇱       = Left click (mouse)
 
 
-Reminders:
+REMINDERS
 
     - When using :'<,'>s/..., do not put '%' in front of the 's/'.
     - \r to insert newline
+
+
+EXTERNAL RESOURCES
+
+    https://vim.fandom.com/wiki/Search_and_replace_in_a_visual_selection
+    https://vim.fandom.com/wiki/Search_and_replace
+    https://vim.rtorr.com/
+    https://neovim.io/doc/user/repeat/#mcursor
+    https://neovim.io/doc/user/pattern/#pattern-overview
+
 
 REGEX
 
@@ -213,13 +223,6 @@ Lua from the Vim command line
     - If you want to inspect a lua object, you can display it using
       `:lua vim.pretty_print(OBJ)`
 
-
-Nice refs
-
-    https://vim.fandom.com/wiki/Search_and_replace_in_a_visual_selection
-    https://vim.fandom.com/wiki/Search_and_replace
-    https://vim.rtorr.com/
-    https://neovim.io/doc/user/pattern/#pattern-overview
 
 
 
