@@ -14,8 +14,9 @@ A- 	= Alt
 
 
 Reminders:
-- When using :'<,'>s/..., do not put '%' in front of the 's/'. 
 
+    - When using :'<,'>s/..., do not put '%' in front of the 's/'.
+    - \r to insert newline
 
 REGEX
 
@@ -26,7 +27,7 @@ REGEX
 
 NORMAL MODE
 
-    gq{ (or gwip?)  Hard-wrap (reflow) current paragraph
+    gq{ OR gwip     Hard-wrap (reflow) current paragraph
     gqq             Hard-wrap (reflow) current line
     :e PATH         Open file in edit mode
     :tabnew         Open file in new tab
@@ -93,6 +94,7 @@ NORMAL MODE
     dG              Delete from current line to end of file
     d <C+End>       Delete from cursor to end of file
     ciw <C-r> 0     Replace word with yanked text
+    C-l             Clear search highlights
 
     C-⇱             Add multi-cursor
     [C              Focus previous multi-cursor
@@ -154,7 +156,7 @@ DIFF/MERGE MODE
 
     nvim -d FILE1 FILE2
 
-    dp              diffput: puts changes under the cursor into the other 
+    dp              diffput: puts changes under the cursor into the other
                     file making them identical (thus removing the diff).
     do              diffget: (o => obtain). The change under the cursor is
                     replaced by the content of the other file making them
@@ -208,8 +210,8 @@ Paste string in front of several rows
 
 Lua from the Vim command line
 
-    - If you want to inspect a lua object, you can display it using 
-      `:lua vim.pretty_print(OBJ)` 
+    - If you want to inspect a lua object, you can display it using
+      `:lua vim.pretty_print(OBJ)`
 
 
 Nice refs
@@ -217,23 +219,14 @@ Nice refs
     https://vim.fandom.com/wiki/Search_and_replace_in_a_visual_selection
     https://vim.fandom.com/wiki/Search_and_replace
     https://vim.rtorr.com/
-
+    https://neovim.io/doc/user/pattern/#pattern-overview
 
 
 
 
 un multicursor with single key press?
-space ff
-    note it and make it open doc in new tab
-fix markdown comments toggle for rmd files {and markdown?}
 align selections with & key
 what C-o do?
 
 showkey -a
 
-nvim term title
-
-keybind to empty/clear search
-
-\r to insert newline
-https://neovim.io/doc/user/pattern/#pattern-overview
