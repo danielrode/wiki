@@ -1,3 +1,0 @@
-
-- log viewer: svlogtail (displays log messages recorded by socklog)
-  - To view xbps log, run: svlogtail xbps
