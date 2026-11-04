@@ -17,6 +17,7 @@ REMINDERS
 
     - When using :'<,'>s/..., do not put '%' in front of the 's/'.
     - \r to insert newline
+    - 2cw
 
 
 EXTERNAL RESOURCES
@@ -148,6 +149,7 @@ VISUAL MODE
     gcc             Toggle comment for selection
     :s/foo/bar/g    Replace "foo" with "bar" within selection
     c"<C-r>"        Surround selection with quote chars
+    o               Flip/reverse/swap selection cursor/anchor
 
     Q               Break selection into multicursors (one per line)
 
